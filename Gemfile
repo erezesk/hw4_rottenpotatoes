@@ -16,6 +16,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'rake', "~> 10.0.4"
 end
 group :production do
   gem 'pg'
