@@ -8,6 +8,7 @@ describe Movie do
     	ans = movie1.similar_by_director
     	ans.include?(movie1).should be_true
     	ans.include?(movie2).should_not be_true
+    	Movie.all_ratings
     end
   end
 end

@@ -10,6 +10,20 @@ describe MoviesController do
         get :similar_movies, movie_id: 55
         assigns[:director].should == movie.director
         assigns[:movies].should == "aaa"
+
+        Movie.create(id: 55)
+        get :show, id: 55
+
+        post :create, {movie: {title:"myMovie"}}
+
+        get :edit, id:55
+        post :update, {id:55, movie: {title:"myMaaovie"}}
+        post :destroy, id:55
+
+        get :index
+
+        get :index, ratings:"PG", sort:"title"
+        get :index, sort:"release_date"
       end
 		end
 		context "without director" do
